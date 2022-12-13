@@ -3,11 +3,13 @@ image: Visual Studio 2019
 before_build:
   - nuget restore
 build:
+configuration:
+  - Release
   project: SeManageVolumeAbuse.sln
   parallel: true
   verbosity: minimal
 artifacts:
-- path: bin\Release\*.exe
+- path: x64\*\*.exe
 only_commits:
   files:
     - SeManageVolumeAbuse/
